@@ -1,9 +1,11 @@
 docker build -t apel73/multi-client:latest -t apel73/multi-client:$SHA -f ./client/Dockerfile ./client
 docker build -t apel73/multi-server:latest -t apel73/multi-server:$SHA -f ./server/Dockerfile ./server
 docker build -t apel73/multi-worker:latest -t apel73/multi-worker:$SHA -f ./worker/Dockerfile ./worker
+
 docker push apel73/multi-client:latest
 docker push apel73/multi-server:latest
 docker push apel73/multi-worker:latest
+
 docker push apel73/multi-client:$SHA
 docker push apel73/multi-server:$SHA
 docker push apel73/multi-worker:$SHA
