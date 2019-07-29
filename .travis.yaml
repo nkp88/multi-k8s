@@ -1,5 +1,5 @@
-sudo: required
 language: generic
+sudo: required
 services:
   - docker
 env:
@@ -19,7 +19,6 @@ before_install:
   - docker build -t apel73/react-test -f ./client/Dockerfile.dev ./client
 script:
   - docker run -e CI=true apel73/react-test npm test
-
 deploy:
   provider: script
   script: bash ./deploy.sh
